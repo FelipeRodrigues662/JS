@@ -145,3 +145,176 @@ function byInsertBefore(){
     elementoPai.insertBefore(novoElemento, elementoAlvo);
 }
 //byInsertBefore();
+
+//.appendChild
+//Adciona um nó após todos os elementos do elemento pai especificado;
+function byAppendChild(){
+    let novoElemento = document.createElement('p');
+    let texto = document.createTextNode("Felipe2");
+    
+    novoElemento.appendChild(texto);
+
+    let p = document.querySelector('#paragrafoPrincipal');
+    let pai = p.parentNode;
+
+    pai.appendChild(novoElemento);
+}
+//byAppendChild();
+
+//.replaceChild
+//Repõe um antigo elemento no DOM, com um novo;
+
+function byReplaceChild(){
+    let newHeading = document.createElement('h1');
+    newHeading.textContent = "Novo Texto";
+
+    let oldHeading = document.getElementById("oldHeading");
+
+    let pai = oldHeading.parentNode;
+
+    pai.replaceChild(newHeading, oldHeading);
+
+}
+//byReplaceChild();
+
+//Criando nós de Texto
+//Podemps criar um nó de texto puro e inserir em um elemento;
+
+function cirarTexto(){
+    let novoElemento = document.createElement('p');
+    let texto = document.createTextNode("Este é o Texto");
+
+    novoElemento.appendChild(texto);
+
+    let elementoAlvo = document.querySelector('#algumTexto');
+    let elementoPai = document.querySelector('#containerPrincipal')
+
+    elementoPai.appendChild(novoElemento, elementoAlvo);
+
+}
+//cirarTexto();
+
+//Nós de Elemento
+//Podemos criar um nó de elemento co o createElement, e deoius inseri no HTML;
+
+function criarLista(){
+
+    let lista = document.createElement('ul');
+
+    for(i = 0 ; i < 5 ; i++){
+
+        let item = document.createElement('li');
+
+        let texto = document.createTextNode(`Texto Lista ${i + 1}`);
+
+        item.appendChild(texto);
+
+        lista.appendChild(item);
+
+    }
+
+    let container = document.getElementById('containerPrincipal');
+
+    container.appendChild(lista);
+}
+//criarLista();
+
+//Modificando e lendo atributos
+
+//Podemos resgatar o valor de um atributo ou trocar com oJS;
+//Por exemplo o href de um "a" ou o src de um elemento "img";
+//.getAttribute pega o valor;
+//setAttribute atualiza o valor;
+
+function altAtributos(){
+
+    let a = document.querySelector("footer a");
+
+    console.log(a.getAttribute("href"));
+
+    let link = 'https://www.google.com';
+
+    a.setAttribute('href', link);
+}
+//altAtributos();
+
+//Verificando altura e largura
+//Com o js também é possível verificar propriedades do elemento como latura e largura
+
+function verifiWH(){
+
+    let elemento = document.getElementById('paragrafoPrincipal');
+
+    console.log('largura: ' + elemento.offsetHeight); // considera as bordas
+    console.log('altura: ' + elemento.offsetWidth);
+
+    console.log('largura: ' + elemento.clientHeight); // não considera as bordas
+    console.log('altura: ' + elemento.clientWidth);
+}
+//verifiWH();
+
+//Posição dos Elementos
+
+//Também é possível checar a posição do elemento na tela;
+//.getBoundingClientRect
+//as posiçõs de top, left, right, bottom do elemesnot e outras informações;
+
+function position(){
+    let elemento = document.getElementById('paragrafoPrincipal');
+
+    console.log(elemento.getBoundingClientRect());
+}
+//position();
+
+//Estilizando com JS
+//Podemos tambémm mudar as propriedades de estilo dos elementos do HTML com o JS;
+//Acessando a propriedade style podemos fazer as modificações;
+//O estilo é manipulado direto na tag, ou seja, substitui o do CSS(ma maioria das vezes);
+
+function style(){
+
+    let p = document.getElementById('paragrafoPrincipal');
+
+    console.log(p.style);
+
+    p.style.color = 'red';
+}
+//style();
+
+//Selecionar vários elementos com query
+//Para selecionar diversos elementos com query, podemos utilizar o método querySlectorAll;
+//em vez de um, podemos pegar odos os elementos semelhantes com o sleector do CSS;
+
+function selectorAll(){
+
+    let todosPs = document.querySelectorAll('p');
+
+    console.log(todosPs);
+
+    todosPs[1].style.color = "rgb(125, 50, 63)";
+    console.log((todosPs.length));
+
+}
+selectorAll();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
