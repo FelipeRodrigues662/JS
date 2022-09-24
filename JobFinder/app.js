@@ -39,7 +39,7 @@ db
 app.get('/', (req, res) => {
 
   let search = req.query.job;
-  let query  = '%'+search+'%'; // PH -> PHP, Word -> Wordpress, press -> Wordpress
+  let query  = '%'+search+'%'; 
 
   if(!search) {
     Job.findAll({order: [
